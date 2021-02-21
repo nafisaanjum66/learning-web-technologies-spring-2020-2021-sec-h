@@ -1,7 +1,7 @@
 <?php
 	$colors = array('key1' => 'Red', 'key2' => 'Green', 'key3' => 'Black');
 
-	$given_value = 'Black';
+	$given_value = 'fvsfb';
 
 	foreach ($colors as $value) {
 		echo "$value\t";
