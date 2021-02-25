@@ -14,7 +14,7 @@
 
 		<table>
 			<tr>
-				<td><img src="icon.png" alt="icon" width="150px"></td>
+				<td><img src="user.png" alt="icon" width="150px"></td>
 				
 			</tr>
 			<tr>
@@ -42,18 +42,16 @@
 			echo "$filename <br>";
 
 			$ext = pathinfo($filename, PATHINFO_EXTENSION);
-			echo "$ext<br>";
+			//echo "$ext<br>";
 
-			//echo "Size : " . $_FILES['$filename']['size'] ."<br>";
+			$sizee = filesize($filename);
 
-			$sizee = filesize("$filename");
-
-			echo "$sizee";
+			//echo "$sizee";
 
 
-			if($ext== "jpeg" || $ext== "jpg" || $ext== "png"){
+			if($ext== "jpeg" || $ext== "jpg" || $ext== "png" || $sizee <= 4194304){
 
-			echo "Done..!<br>";
+			echo " Submission Done..!<br>";
 		}
 		else {
 		echo "Chose correct file.";
