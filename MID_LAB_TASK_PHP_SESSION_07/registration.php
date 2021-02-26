@@ -33,7 +33,7 @@ if($name == "" || $email == "" || $username == "" || $password == "" || $confirm
 {
 
 	// name
-		if(strlen($name)>4){
+		if(strlen($name)>3){
 		for ($i=0; $i < strlen($name) ; $i++){
 			if(($name[$i]>="a" && $name[$i] <= "z") || ($name[$i] >= "A" && $name[$i] <= "Z") || $name[$i] == "_" || $name[$i] == "-" || $name[$i] == ".")
 			{ 
