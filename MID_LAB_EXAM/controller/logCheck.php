@@ -3,10 +3,10 @@
 
 	if(isset($_POST['submit'])){
 
-		$username = $_POST['username'];
+		$id = $_POST['id'];
 		$password = $_POST['password'];
 
-		if($username == "" || $password == ""){
+		if($id == "" || $password == ""){
 			echo "null submission...";
 		}else{
 			$myfile = fopen('list.json', 'r');
@@ -15,11 +15,12 @@
 			
 			for ($i=0; $i < sizeof($user); $i++) { 
 
-				if($username==$user[$i]['username']){
+				if($id==$user[$i]['id']){
 					if($password==$user[$i]['password']){
 						$_SESSION['flag'] = true;
-						$_SESSION['username']=$user[$i]['username'];
-						header('location: ../view/home.php');					
+						$_SESSION['id']= $user[$i]['id'];
+						$_SESSION['name']=$user[$i]['name'];
+						header('location: ../view/user_home.php');					
 					}
 				}
 				
