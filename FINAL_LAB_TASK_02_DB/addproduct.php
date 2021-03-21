@@ -1,13 +1,15 @@
 <?php
+session_start();
 if (isset($_POST['submit'])) {
 	$name= $_POST['name'];
 	$buyprice= $_POST['buyprice'];
 	$sellprice= $_POST['sellprice'];
+
 	$profit = $sellprice-$buyprice;
-	echo $profit;
+
 	$conn = mysqli_connect('localhost', 'root' , '' , 'product_db');
 
-	$sql = "insert into products values('' , '{$name}' , '{$profit}')";
+	$sql = "insert into products values('' , '{$name}' , '{$profit}' ,'{$buyprice}' , '{$sellprice}')";
 	$result = mysqli_query($conn, $sql);
 	if($result)
 	{
