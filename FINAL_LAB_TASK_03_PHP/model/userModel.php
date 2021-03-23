@@ -32,6 +32,19 @@
 		}
 	}
 
+	function changeUserByPassword($password, $username, $id){
+
+		$conn = getConnection();
+
+		$sql = "update users set password='{$password}' where name='{$username}' and id='{$id}'";
+
+		if(mysqli_query($conn, $sql)){
+			return $password;
+		}else{
+			return false;
+		}
+	}
+
 	function getUserById($id){
 
 		$conn = getConnection();
@@ -59,7 +72,7 @@
 	function insertUser($user){
 
 		$conn = getConnection();
-		$sql = "insert into users values('{$user['id']}', '{$user['username']}', '{$user['password']}', '{$user['email']}', '{$user['type']}')";
+		$sql = "insert into users values('{$user['id']}', '{$user['password']}', '{$user['username']}', '{$user['email']}', '{$user['type']}')";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;

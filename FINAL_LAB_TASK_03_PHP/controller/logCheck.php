@@ -20,6 +20,7 @@
 				$_SESSION['type'] = $user['type'];
 				$_SESSION['username'] = $username;
 				$_SESSION['password'] = $password;
+
 				if($user['type'] == 'admin'){
 
 					header('location: ../view/adminhome.php');
